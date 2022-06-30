@@ -1,25 +1,28 @@
 import { useState } from 'react';
 
-import { Box, Container, VStack } from '@chakra-ui/react';
-import { Profile, Search } from './components';
+import { Container, Flex, VStack } from '@chakra-ui/react';
+import { Content, Search } from './components';
+
+import { User } from 'types/user';
 
 export function Home() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState<User>({});
   const [search, setSearch] = useState('');
+
   const [isLoading, setIsLoading] = useState(false);
 
   return (
-    <Box bg={'bg.lt'} h={'100vh'} w={'100vw'}>
-      <Container maxW={'xl'}>
-        <VStack p={8} spacing={8}>
+    <Flex bg={'bg.lt'} h={'100vh'} w={'100vw'}>
+      <Container display={'flex'} maxW={'xl'}>
+        <VStack flex={1} p={8} spacing={8}>
           <Search
-            setIsLoading={setIsLoading}
-            setSearch={setSearch}
             setUser={setUser}
+            setSearch={setSearch}
+            setIsLoading={setIsLoading}
           />
-          {search && <Profile isLoading={isLoading} user={user} />}
+          <Content user={user} search={search} isLoading={isLoading} />
         </VStack>
       </Container>
-    </Box>
+    </Flex>
   );
 }

@@ -22,41 +22,31 @@ export function Profile(props: ProfileProps) {
   } = props;
 
   return (
-    <Card h={40} overflow={'hidden'} w={'full'}>
-      <HStack alignItems={'stretch'} h={'full'} spacing={0}>
-        <Skeleton isLoaded={!isLoading}>
+    <Skeleton isLoaded={!isLoading} w={'full'}>
+      <Card h={40} overflow={'hidden'}>
+        <HStack flex={1} spacing={0}>
           <Avatar
             borderRadius={0}
             boxSize={40}
             name={name}
             src={avatar_url}
           />
-        </Skeleton>
 
-        <VStack
-          flex={1}
-          justifyContent={'center'}
-          textAlign={'center'}
-          px={8}
-          py={4}
-        >
-          <Skeleton isLoaded={!isLoading}>
+          <VStack flex={1} px={8} py={4} textAlign={'center'}>
             {name && (
               <Heading noOfLines={2} size={'lg'}>
                 {name}
               </Heading>
             )}
-          </Skeleton>
 
-          <Skeleton isLoaded={!isLoading}>
             {login && (
               <Link noOfLines={1} href={html_url}>
                 @{login}
               </Link>
             )}
-          </Skeleton>
-        </VStack>
-      </HStack>
-    </Card>
+          </VStack>
+        </HStack>
+      </Card>
+    </Skeleton>
   );
 }

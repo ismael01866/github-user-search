@@ -4,4 +4,7 @@ export interface User {
   name?: string;
   login?: string;
   html_url?: string;
+  public_repos?: number;
+  followers?: number;
+  following?: number;
 }

@@ -37,7 +37,8 @@ export const theme = extendTheme({
         boxShadow: 'base',
         border: '1px solid',
         borderColor: 'border.base',
-        borderRadius: 'base'
+        borderRadius: 'base',
+        display: 'flex'
       }
     },
     Link: {

@@ -52,11 +52,17 @@ export function Search(props: SearchProps) {
       <InputGroup>
         <Input
           ref={inputRef}
+          focusBorderColor={'border.base'}
           placeholder="Type username..."
           variant={'filled'}
+          _focus={{
+            outline: 'none'
+          }}
         />
-        <InputRightElement w={'auto'}>
-          <Button type="submit">Search</Button>
+        <InputRightElement w={'auto'} mr={1}>
+          <Button type={'submit'} size={'sm'}>
+            Search
+          </Button>
         </InputRightElement>
       </InputGroup>
     </Box>
