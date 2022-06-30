@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 import { Container, Flex, VStack } from '@chakra-ui/react';
-import { Content, Search } from './components';
+import { Content } from 'components/Content';
+import { Search } from 'components/Search';
 
 import { User } from 'types/user';
 
-export function Home() {
+const Home = () => {
   const [user, setUser] = useState<User>({});
   const [search, setSearch] = useState('');
 
@@ -25,4 +26,6 @@ export function Home() {
       </Container>
     </Flex>
   );
-}
+};
+
+export default Home;
