@@ -1,6 +1,8 @@
 ## Demo
 
-https://sidebar-navigation-soda.vercel.app/
+https://github-user-search-blond.vercel.app/
+
+![screenshot](https://user-images.githubusercontent.com/145450/176756901-be20b2ce-b58b-421a-9878-66e96b58d9d8.png)
 
 ## Getting Started
 
